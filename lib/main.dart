@@ -72,7 +72,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset('assets/images/rannigif.gif', fit: BoxFit.cover),
+              Transform.scale(
+                scale: 1,
+                child: Image.asset(
+                  'assets/images/rannigif.gif',
+                  fit: BoxFit.cover,
+                ),
+              ),
               Positioned(
                 left: 0,
                 right: 0,
