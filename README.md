@@ -233,8 +233,3 @@ flutter run
 flutter test
 flutter analyze
 ```
-
-## 參考
-
-- README 撰寫結構參考：
-  https://medium.com/%E6%B5%B7%E5%A4%A7-ios-app-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/2-%E6%89%93%E9%80%A0%E5%90%B8%E7%9D%9B%E7%9A%84-about-%E9%A0%81%E9%9D%A2-%E9%AD%94%E7%89%A9%E7%8D%B5%E4%BA%BA-%E8%8D%92%E9%87%8E-1ff888fa5cb0
