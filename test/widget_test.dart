@@ -1,30 +1,29 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_about_page/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Welcome to navigation flow works', (WidgetTester tester) async {
+    await tester.pumpWidget(const RanniAboutApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('點擊畫面進入拉妮介紹'), findsOneWidget);
+    expect(find.byKey(const Key('ranni-gif-start')), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.tap(find.byKey(const Key('ranni-gif-start')));
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('拉妮介紹'), findsWidgets);
+    expect(find.text('菈妮 Ranni'), findsOneWidget);
+    expect(find.text('回歡迎頁'), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.route_outlined));
+    await tester.pumpAndSettle();
+    expect(find.text('菈妮任務線詳細流程'), findsOneWidget);
+
+    await tester.tap(find.byIcon(FontAwesomeIcons.khanda));
+    await tester.pumpAndSettle();
+    expect(find.text('暗月大劍（Dark Moon Greatsword）'), findsOneWidget);
   });
 }
